@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Ant-Version: Apache Ant 1.7.1
+MIDlet-Vendor: Mobak
+MIDlet-Version: 1.19.0
+client_type: 4
+4: se.lordmancer.ru
+MIDlet-1: Lordmancer_elite, /mobak/res/icon.png, mobak.Main2
+MicroEdition-Configuration: CLDC-1.0
+Created-By: 1.6.0-b105 (Sun Microsystems Inc.)
+MIDlet-Name: Lordmancer_elite
+MicroEdition-Profile: MIDP-1.0
+

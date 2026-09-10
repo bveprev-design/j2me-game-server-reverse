@@ -1,0 +1,286 @@
+﻿
+count:32
+name1:Россия
+smsprefix1:mancer
+numCount1:3
+moneyName1:руб.
+num1-1:5125 10 1
+num1-2:5127 30 4
+num1-3:5120 100 14
+name2:Абхазия(АКВАФОН-GSM)
+smsprefix2:lordmancer
+numCount2:3
+moneyName2:RUB
+num2-1:7375 35.00 5
+num2-2:2090 100.00 13
+num2-3:1315 135.00 18
+name3:Азербайджан(Azercell)
+smsprefix3:lordmancer
+numCount3:2
+moneyName3:AZN
+num3-1:9363 2.00 9
+num3-2:9395 5.00 24
+name4:Азербайджан(Nar Mobile (Azerfon))
+smsprefix4:lordmancer
+numCount4:4
+moneyName4:AZN
+num4-1:3301 0.89 4
+num4-2:3302 2.35 10
+num4-3:3303 3.53 16
+num4-4:3304 5.89 29
+name5:Армения(Beeline Armenia)
+smsprefix5:lordmancer
+numCount5:4
+moneyName5:AMD
+num5-1:3009 500.00 5
+num5-2:4009 1000.00 9
+num5-3:5009 1500.00 15
+num5-4:7009 1700.00 18
+name6:Армения(VivaCell-MTS)
+smsprefix6:lordmancer
+numCount6:4
+moneyName6:AMD
+num6-1:3009 500.00 5
+num6-2:4009 1000.00 9
+num6-3:5009 1500.00 15
+num6-4:7009 2000.00 24
+name7:Беларусь(Diallog)
+smsprefix7:lordmancer
+numCount7:1
+moneyName7:BYR
+num7-1:1315 11409.75 14
+name8:Беларусь(Velcom)
+smsprefix8:lordmancer
+numCount8:1
+moneyName8:BYR
+num8-1:2090 9335.25 11
+name9:Беларусь(МТС)
+smsprefix9:lordmancer
+numCount9:1
+moneyName9:BYR
+num9-1:1315 11409.75 14
+name10:Грузия(Beeline Georgia)
+smsprefix10:lordmancer
+numCount10:4
+moneyName10:GEL
+num10-1:4142 1.70 4
+num10-2:4143 3.40 7
+num10-3:4144 5.10 11
+num10-4:4145 8.50 19
+name11:Грузия(Geocell)
+smsprefix11:lordmancer
+numCount11:4
+moneyName11:GEL
+num11-1:4142 1.70 4
+num11-2:4143 3.40 7
+num11-3:4144 5.00 11
+num11-4:4145 5.00 11
+name12:Грузия(Magticom)
+smsprefix12:lordmancer
+numCount12:4
+moneyName12:GEL
+num12-1:4142 1.70 4
+num12-2:4143 3.40 7
+num12-3:4144 5.10 11
+num12-4:4145 8.50 19
+name13:Казахстан(Beeline Kazakhstan)
+smsprefix13:lordmancer
+numCount13:4
+moneyName13:KZT
+num13-1:6365 299.00 7
+num13-2:2090 399.00 10
+num13-3:8385 599.00 16
+num13-4:9395 599.00 16
+name14:Казахстан(Kcell, Activ)
+smsprefix14:lordmancer
+numCount14:4
+moneyName14:KZT
+num14-1:6365 299.00 7
+num14-2:2090 399.00 10
+num14-3:8385 599.00 16
+num14-4:9395 599.00 16
+name15:Казахстан(NEO)
+smsprefix15:lordmancer
+numCount15:4
+moneyName15:KZT
+num15-1:6365 299.00 7
+num15-2:1315 399.00 10
+num15-3:8385 599.00 16
+num15-4:9395 599.00 16
+name16:Казахстан(PAThWORD, Dalacom, City)
+smsprefix16:lordmancer
+numCount16:5
+moneyName16:KZT
+num16-1:6365 299.00 7
+num16-2:1315 399.00 10
+num16-3:2090 399.00 10
+num16-4:8385 599.00 16
+num16-5:9395 599.00 16
+name17:Кыргызстан(Beeline (Bitel, Mobi))
+smsprefix17:lordmancer
+numCount17:4
+moneyName17:USD
+num17-1:4142 1.00 4
+num17-2:4143 2.00 8
+num17-3:4144 3.00 12
+num17-4:4145 5.00 21
+name18:Кыргызстан(Fonex)
+smsprefix18:lordmancer
+numCount18:4
+moneyName18:KGS
+num18-1:4142 50.00 4
+num18-2:4143 100.00 8
+num18-3:4144 150.00 12
+num18-4:4145 250.00 21
+name19:Кыргызстан(Katel)
+smsprefix19:lordmancer
+numCount19:4
+moneyName19:USD
+num19-1:4142 1.00 4
+num19-2:4143 2.00 8
+num19-3:4144 3.00 12
+num19-4:4145 5.00 21
+name20:Кыргызстан(MegaCom)
+smsprefix20:lordmancer
+numCount20:4
+moneyName20:KGS
+num20-1:4142 50.00 4
+num20-2:4143 100.00 8
+num20-3:4144 150.00 12
+num20-4:4145 250.00 21
+name21:Кыргызстан(Nexi (Sotel))
+smsprefix21:lordmancer
+numCount21:4
+moneyName21:KGS
+num21-1:4142 50.00 4
+num21-2:4143 100.00 8
+num21-3:4144 150.00 12
+num21-4:4145 250.00 21
+name22:Кыргызстан(O!)
+smsprefix22:lordmancer
+numCount22:4
+moneyName22:KGS
+num22-1:4142 50.00 4
+num22-2:4143 100.00 8
+num22-3:4144 150.00 12
+num22-4:4145 250.00 21
+name23:Таджикистан(Indigo)
+smsprefix23:lordmancer
+numCount23:13
+moneyName23:USD
+num23-1:2420 0.06 1
+num23-2:2425 0.12 1
+num23-3:2320 0.54 2
+num23-4:4345 0.36 2
+num23-5:1200 0.72 3
+num23-6:1320 1.19 4
+num23-7:7375 1.79 7
+num23-8:2325 2.39 9
+num23-9:6365 2.99 11
+num23-10:2090 3.59 14
+num23-11:1315 5.39 22
+num23-12:8385 7.19 30
+num23-13:9395 11.99 58
+name24:Узбекистан(Beeline Uzbekistan)
+smsprefix24:lordmancer
+numCount24:5
+moneyName24:USD
+num24-1:1200 0.50 2
+num24-2:7375 1.00 4
+num24-3:6365 2.00 7
+num24-4:1315 3.00 11
+num24-5:8385 5.00 20
+name25:Узбекистан(Perfectum Mobile)
+smsprefix25:lordmancer
+numCount25:5
+moneyName25:USD
+num25-1:1200 0.50 2
+num25-2:7375 1.00 4
+num25-3:6365 2.00 7
+num25-4:1315 3.00 11
+num25-5:8385 5.00 20
+name26:Узбекистан(Ucell)
+smsprefix26:lordmancer
+numCount26:5
+moneyName26:USD
+num26-1:1200 0.50 2
+num26-2:7375 1.00 4
+num26-3:6365 2.00 7
+num26-4:1315 3.00 11
+num26-5:8385 5.00 20
+name27:Украина(Beeline)
+smsprefix27:lordmancer
+numCount27:12
+moneyName27:UAH
+num27-1:4345 2.00 1
+num27-2:1200 5.00 2
+num27-3:2320 3.00 2
+num27-4:1320 6.00 3
+num27-5:7375 9.00 4
+num27-6:2325 15.00 6
+num27-7:6365 18.00 8
+num27-8:2090 20.00 9
+num27-9:1315 25.00 11
+num27-10:8385 30.00 13
+num27-11:8404 40.00 18
+num27-12:9395 50.00 24
+name28:Украина(Kyivstar)
+smsprefix28:lordmancer
+numCount28:12
+moneyName28:UAH
+num28-1:4345 2.00 1
+num28-2:1200 5.00 2
+num28-3:2320 3.00 2
+num28-4:1320 6.00 3
+num28-5:7375 9.00 4
+num28-6:2325 15.00 6
+num28-7:6365 18.00 8
+num28-8:2090 20.00 9
+num28-9:1315 25.00 11
+num28-10:8385 30.00 13
+num28-11:8404 40.00 18
+num28-12:9395 50.00 24
+name29:Украина(LIFE)
+smsprefix29:lordmancer
+numCount29:10
+moneyName29:UAH
+num29-1:4345 2.00 1
+num29-2:1200 5.00 2
+num29-3:1320 6.00 3
+num29-4:7375 9.00 4
+num29-5:6365 18.00 8
+num29-6:2090 20.00 9
+num29-7:1315 25.00 11
+num29-8:8385 30.00 13
+num29-9:8404 40.00 18
+num29-10:9395 50.00 24
+name30:Украина(MTC (UMC))
+smsprefix30:lordmancer
+numCount30:12
+moneyName30:UAH
+num30-1:4345 2.00 1
+num30-2:1200 5.00 2
+num30-3:2320 3.00 2
+num30-4:1320 6.00 3
+num30-5:7375 9.00 4
+num30-6:2325 15.00 6
+num30-7:6365 18.00 8
+num30-8:2090 20.00 9
+num30-9:1315 25.00 11
+num30-10:8385 30.00 13
+num30-11:8404 40.00 18
+num30-12:9395 50.00 24
+name31:Эстония(EMT)
+smsprefix31:lordmancer
+numCount31:3
+moneyName31:EEK
+num31-1:15330 15.00 5
+num31-2:13015 39.00 13
+num31-3:13017 50.00 17
+name32:Эстония(Radiolinija Eesti)
+smsprefix32:lordmancer
+numCount32:3
+moneyName32:EEK
+num32-1:15330 15.00 5
+num32-2:13015 39.00 13
+num32-3:13017 50.00 17
