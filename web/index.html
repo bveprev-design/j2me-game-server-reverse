@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101927">
+  <meta name="description" content="Лордмансер — самостоятельная офлайн-версия J2ME-игры для браузера. Исследуйте карту, соберите армию и восстановите три печати.">
+  <link rel="icon" type="image/png" href="assets/logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <title>Лордмансер · офлайн</title>
+  <script src="engine.js" defer></script>
+  <script src="game.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <header class="masthead">
+      <div class="brand">
+        <div class="brand-sigil" aria-hidden="true">✦</div>
+        <div>
+          <span class="overline">СОТКАННЫЙ МИР <span class="overline-mark">/</span> 01</span>
+          <h1>ЛОРДМАНСЕР<span class="brand-period">.</span></h1>
+        </div>
+      </div>
+      <div class="header-right">
+        <span class="offline-tag"><i aria-hidden="true"></i> АВТОНОМНАЯ ВЕРСИЯ</span>
+        <button id="settings-button" class="icon-button" type="button" aria-label="Настройки и сохранения" title="Настройки и сохранения">⚙</button>
+      </div>
+    </header>
+
+    <div id="layout" class="layout">
+      <main class="main-column">
+        <section id="intro" class="intro card" aria-labelledby="intro-title">
+          <div class="intro-art">
+            <div class="art-halo" aria-hidden="true"></div>
+            <img src="assets/logo.png" width="170" height="135" alt="Герб Лордмансера" class="logo-art">
+            <div class="edition-label">HTML5 <span aria-hidden="true">✦</span> OFFLINE EDITION</div>
+          </div>
+          <div class="intro-copy">
+            <span class="eyebrow">ПРИКЛЮЧЕНИЕ БЕЗ ПОДКЛЮЧЕНИЯ</span>
+            <h2 id="intro-title">Мир ждёт своего героя.</h2>
+            <p>Собери войско, исследуй земли и верни три древние печати в Город Надежды. Всё приключение живёт прямо в твоём браузере.</p>
+          </div>
+          <form id="new-game-form" autocomplete="off">
+            <label class="field-label" for="hero-input">ИМЯ ГЕРОЯ <span>01 / 02</span></label>
+            <input id="hero-input" name="hero" type="text" minlength="1" maxlength="24" placeholder="Как тебя зовут?" value="Странник" required>
+            <fieldset class="race-fieldset">
+              <legend class="field-label">ВЫБЕРИ РАСУ <span>02 / 02</span></legend>
+              <div id="race-options" class="race-options"></div>
+            </fieldset>
+            <p id="race-description" class="race-description" aria-live="polite"></p>
+            <button class="primary-button start-button" type="submit"><span>НАЧАТЬ ПРИКЛЮЧЕНИЕ</span><span aria-hidden="true">→</span></button>
+            <button id="continue-button" class="secondary-button continue-button" type="button" hidden>ПРОДОЛЖИТЬ СОХРАНЁННУЮ ИГРУ</button>
+          </form>
+          <div class="intro-foot"><span aria-hidden="true">✧</span> Без регистрации, сети и установки. Сохраняется на этом устройстве.</div>
+        </section>
+
+        <section id="play" class="play" hidden aria-label="Игра">
+          <div class="hero-hud card">
+            <div id="hero-portrait" class="hero-portrait" aria-hidden="true"></div>
+            <div class="hero-details">
+              <div class="hero-line"><strong id="hero-name">Герой</strong><span id="hero-level">УР. 1</span></div>
+              <div class="meter-line"><span>ЖИЗНЬ</span><div class="meter health"><div id="hp-fill"></div></div><b id="hp-text">48/48</b></div>
+              <div class="meter-line"><span>МАНА</span><div class="meter mana"><div id="mana-fill"></div></div><b id="mana-text">18/18</b></div>
+            </div>
+            <div class="wallet" title="Монеты"><div class="coin-icon" aria-hidden="true"></div><b id="gold-text">65</b></div>
+          </div>
+
+          <div class="scene-card card">
+            <div class="scene-heading">
+              <div><span id="scene-overline" class="eyebrow">ЗЕМЛЯ I · СОТКАННЫЙ МИР</span><h2 id="scene-title">Карта земли</h2></div>
+              <span id="scene-detail" class="scene-detail">17 : 19</span>
+            </div>
+            <div id="scene-area" class="scene-area">
+              <canvas id="world-canvas" width="360" height="360" aria-label="Карта земли: стрелки для перемещения, касание клетки для построения пути" tabindex="0"></canvas>
+              <canvas id="battle-canvas" width="360" height="360" aria-label="Поле боя: стрелки перемещают курсор, пробел выбирает клетку" tabindex="0" hidden></canvas>
+              <div id="town-view" class="town-view" hidden>
+                <div class="town-illustration"><div id="town-castle" class="town-castle" aria-hidden="true"></div><span>ГОРОД НАДЕЖДЫ</span></div>
+                <div class="town-tabs" role="group" aria-label="Места в городе">
+                  <button type="button" data-town="inn">Постоялый двор</button>
+                  <button type="button" data-town="barracks">Казарма</button>
+                  <button type="button" data-town="shop">Магазин</button>
+                </div>
+                <div id="town-content" class="town-content"></div>
+              </div>
+              <div id="ending-view" class="ending-view" hidden>
+                <span class="ending-stars" aria-hidden="true">✦ ✧ ✦</span>
+                <img src="assets/logo.png" alt="" width="170" height="135">
+                <span class="eyebrow">ПОВЕСТЬ ЗАВЕРШЕНА</span>
+                <h3>Ткань мира восстановлена.</h3>
+                <p>Все три печати вернулись в Город Надежды. Твоё имя останется в его легендах.</p>
+                <button id="ending-continue" type="button" class="primary-button">ПРОДОЛЖИТЬ ИССЛЕДОВАНИЕ →</button>
+              </div>
+            </div>
+            <div class="scene-status"><span class="status-rune" aria-hidden="true">✦</span><span id="scene-caption" role="status" aria-live="polite">Выберите путь.</span></div>
+          </div>
+
+          <div id="world-controls" class="world-controls card">
+            <div class="control-label">ПЕРЕМЕЩЕНИЕ <span>W A S D / СТРЕЛКИ</span></div>
+            <div class="control-row">
+              <div class="dpad" role="group" aria-label="Управление героем">
+                <button type="button" class="direction up" data-move="0,-1" aria-label="Вверх">▲</button>
+                <button type="button" class="direction left" data-move="-1,0" aria-label="Влево">◀</button>
+                <button type="button" id="interact-button" class="direction center" aria-label="Осмотреть текущую клетку" title="Осмотреть текущую клетку">✦</button>
+                <button type="button" class="direction right" data-move="1,0" aria-label="Вправо">▶</button>
+                <button type="button" class="direction down" data-move="0,1" aria-label="Вниз">▼</button>
+              </div>
+              <div class="control-hint"><strong>Выбери маршрут</strong><span>Нажми на клетку карты или иди по шагам. Врата перенесут тебя через землю.</span></div>
+            </div>
+          </div>
+
+          <div id="town-controls" class="town-controls card" hidden>
+            <button id="leave-town" type="button" class="primary-button">ВЫЙТИ НА КАРТУ <span aria-hidden="true">→</span></button>
+            <span>Перед походом проверь армию и припасы.</span>
+          </div>
+
+          <div id="battle-controls" class="battle-controls card" hidden>
+            <div class="battle-control-header"><span class="eyebrow">ТАКТИЧЕСКИЙ БОЙ</span><strong id="battle-round">РАУНД 1</strong></div>
+            <p id="battle-hint">Выбери свой отряд и цель. Каждый отряд ходит один раз за раунд.</p>
+            <p id="battle-cursor-info" class="battle-cursor-info" role="status">Стрелки / WASD — клетка · Пробел — действие · Enter — конец хода.</p>
+            <div class="spell-row">
+              <button type="button" data-spell="bolt" class="spell-button">⚡ <span>Молния</span><small>6 маны</small></button>
+              <button type="button" data-spell="heal" class="spell-button">✚ <span>Лечение</span><small>5 маны</small></button>
+              <button type="button" id="battle-potion" class="spell-button">✦ <span>Зелье</span><small id="potion-count">×1</small></button>
+            </div>
+            <div class="battle-end-row">
+              <button id="end-turn" type="button" class="primary-button">ЗАКОНЧИТЬ ХОД <span aria-hidden="true">→</span></button>
+              <button id="flee-button" type="button" class="text-button">Сбежать</button>
+            </div>
+          </div>
+
+          <nav class="quick-nav card" aria-label="Разделы игры">
+            <button type="button" data-panel="journal"><span class="nav-icon" aria-hidden="true">◇</span> Дневник</button>
+            <button type="button" data-panel="hero"><span class="nav-icon" aria-hidden="true">♜</span> Герой <i id="points-dot" class="notification-dot" hidden></i></button>
+            <button type="button" data-panel="bag"><span class="nav-icon" aria-hidden="true">▣</span> Сумка</button>
+            <button type="button" data-panel="map"><span class="nav-icon" aria-hidden="true">▦</span> Карта</button>
+          </nav>
+        </section>
+      </main>
+
+      <aside id="sidebar" class="sidebar" hidden aria-label="Дневник и сведения">
+        <section class="side-card quest-card card">
+          <div class="side-label">ГЛАВНАЯ ЦЕЛЬ <span>01 — 03</span></div>
+          <h2>Три печати мира</h2>
+          <p id="quest-description">Найди три древние печати и вернись в Город Надежды.</p>
+          <div id="seal-track" class="seal-track" aria-label="Найденные печати"></div>
+          <div class="quest-progress"><div id="quest-progress-fill"></div></div>
+          <span id="quest-progress-text" class="quest-footer">0 / 3 ПЕЧАТЕЙ НАЙДЕНО</span>
+        </section>
+        <section class="side-card map-card card">
+          <div class="side-label">КАРТА МИРА <span>36 × 36</span></div>
+          <canvas id="mini-map" width="180" height="180" aria-label="Мини-карта открытой местности"></canvas>
+          <div class="map-legend"><span><i class="legend-hero"></i> ГЕРОЙ</span><span><i class="legend-site"></i> ПЕЧАТЬ</span><span><i class="legend-city"></i> ГОРОД</span></div>
+        </section>
+        <section class="side-card journal-card card">
+          <div class="side-label">ЛЕТОПИСЬ ПУТЕШЕСТВИЯ <span>↘</span></div>
+          <ol id="event-log" class="event-log" aria-live="off"></ol>
+        </section>
+        <div class="sidebar-foot">Оригинальные спрайты клиента J2ME <span>✦</span> Новая локальная кампания</div>
+      </aside>
+    </div>
+
+    <footer class="page-footer"><span>ЛОРДМАНСЕР <span class="footer-divider">/</span> HTML5 ОФЛАЙН</span><span id="save-status" role="status">Никаких серверных соединений</span></footer>
+  </div>
+
+  <dialog id="panel-dialog" class="panel-dialog" aria-labelledby="dialog-title">
+    <div class="dialog-header"><div><span id="dialog-eyebrow" class="eyebrow">ЛИЧНОЕ ДЕЛО</span><h2 id="dialog-title">Герой</h2></div><button id="dialog-close" type="button" class="icon-button" aria-label="Закрыть">×</button></div>
+    <div id="dialog-content" class="dialog-content"></div>
+  </dialog>
+  <input id="import-file" type="file" accept=".json,application/json" hidden>
+</body>
+</html>
